@@ -1,0 +1,406 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <title>Hydropon</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+  <script src='https://cdnjs.cloudflare.com/ajax/libs/mathjs/12.3.0/math.js'></script>
+  <script src="script/boot.js"></script>
+  <script src="script/blescript.js"></script>
+</head>
+
+<body>
+
+<div class="container-fluid mt-2 bg-light">
+ <div id = "inicial">
+   <div class="row">
+    <div class="row"> 
+		<button onclick = "bleInit()">
+			Procurar Devices
+		</button>
+	</div>
+   </div>
+ </div>
+ <div id = "principal" hidden>
+  <div class="row">
+    <div class="col-1">
+	  <img src="img/hidropon.png" class="rounded img-fluid" alt="Cinque Terre">
+    </div>
+    <div class="col-11">
+	  <div class="row">
+		<p class="h1 text-center text.primary" >Hydropon</p>
+	  </div>
+	  <div class="row">
+		<p class="text-info text-center">Unlock the power of water</p>
+	  </div>
+    </div>
+  
+  </div>
+  <br>
+  <div class = "row">
+	<div class = col-10>
+  <!-- Nav tabs -->
+		<ul class="nav nav-tabs" role="tablist">
+			<li class="nav-item">
+				<a class="nav-link" data-bs-toggle="tab" href="#light">Light</a>
+			</li>
+			<li class="nav-item">
+				<a class="nav-link" data-bs-toggle="tab" href="#pump">Pump</a>
+			</li>
+			<li class="nav-item">
+				<a class="nav-link" data-bs-toggle="tab" href="#fan">Fan</a>
+			</li>
+			<li class="nav-item">
+				<a class="nav-link" data-bs-toggle="tab" href="#info">Info</a>
+			</li>	
+		</ul>
+	</div>
+	<div class= "col-2">
+		<button type="submit" class="btn btn-success sendButton">
+			<img src="img/buttonpng.png" alt="buttonpng"/>
+		</button>	
+	</div>
+  </div>
+  <!-- Tab panes -->
+  <div class="tab-content">
+  
+    <div id="light" class="container tab-pane fade"><br>
+	  <div class="row">
+	    <div class = "col-10">
+		
+			<div class= "row"><h3>LIGHT</h5></div>
+			<div class= "row"><p>Configure here your lights</p></div>
+	    </div>
+		<div class = "col-2">
+		</div>
+	  </div>
+	  <form class = "mt-3 mb-3">
+	    <div class= "row ml-5">
+			<div class = "col"></div>
+			<div class="col form-check" role="form">
+				<input type="radio" class="form-check-input" id="vegetal" name="optradio" value="vegetal" checked>
+				<label class="form-check-label" for="vegetal">Vegetal Phase</label>
+			</div>
+			<div class="col form-check">
+				<input type="radio" class="form-check-input" id="flower" name="optradio" value="flower">
+				<label class="form-check-label" for="flower">Flowering Phase</label>
+			</div>
+			<div class = "col">
+			</div>
+		</div>
+	  </form>
+	  
+	  <div id="l-hours">
+
+		<div class = "row mb-2">
+			<div class = "col-3">
+				<button type="button" class="btn btn-danger text-center w-100 hours light">00</button>
+			</div>
+			<div class = "col-3">
+				<button type="button" class="btn btn-danger text-center w-100 hours light">01</button>
+			</div>
+			<div class = "col-3">
+				<button type="button" class="btn btn-danger text-center w-100 hours light">02</button>
+			</div>
+			<div class = "col-3">
+				<button type="button" class="btn btn-danger text-center w-100 hours light">03</button>
+			</div>		
+		</div>
+		<div class = "row mb-2">
+			<div class = "col-3">
+				<button type="button" class="btn btn-danger text-center w-100 hours light">04</button>
+			</div>
+			<div class = "col-3">
+				<button type="button" class="btn btn-danger text-center w-100 hours light">05</button>
+			</div>
+			<div class = "col-3">
+				<button type="button" class="btn btn-danger text-center w-100 hours light">06</button>
+			</div>
+			<div class = "col-3">
+				<button type="button" class="btn btn-danger text-center w-100 hours light">07</button>
+			</div>		
+		</div>
+		<div class = "row mb-2">
+			<div class = "col-3">
+				<button type="button" class="btn btn-danger text-center w-100 hours light">08</button>
+			</div>
+			<div class = "col-3">
+				<button type="button" class="btn btn-danger text-center w-100 hours light">09</button>
+			</div>
+			<div class = "col-3">
+				<button type="button" class="btn btn-danger text-center w-100 hours light">10</button>
+			</div>
+			<div class = "col-3">
+				<button type="button" class="btn btn-danger text-center w-100 hours light">11</button>
+			</div>		
+		</div>
+		<div class = "row mb-2">
+			<div class = "col-3">
+				<button type="button" class="btn btn-danger text-center w-100 hours light">12</button>
+			</div>
+			<div class = "col-3">
+				<button type="button" class="btn btn-danger text-center w-100 hours light">13</button>
+			</div>
+			<div class = "col-3">
+				<button type="button" class="btn btn-danger text-center w-100 hours light">14</button>
+			</div>
+			<div class = "col-3">
+				<button type="button" class="btn btn-danger text-center w-100 hours light">15</button>
+			</div>		
+		</div>
+		<div class = "row mb-2">
+			<div class = "col-3">
+				<button type="button" class="btn btn-danger text-center w-100 hours light">16</button>
+			</div>
+			<div class = "col-3">
+				<button type="button" class="btn btn-danger text-center w-100 hours light">17</button>
+			</div>
+			<div class = "col-3">
+				<button type="button" class="btn btn-danger text-center w-100 hours light">18</button>
+			</div>
+			<div class = "col-3">
+				<button type="button" class="btn btn-danger text-center w-100 hours light">19</button>
+			</div>		
+		</div>
+		<div class = "row mb-2">
+			<div class = "col-3">
+				<button type="button" class="btn btn-danger text-center w-100 hours light">20</button>
+			</div>
+			<div class = "col-3">
+				<button type="button" class="btn btn-danger text-center w-100 hours light">21</button>
+			</div>
+			<div class = "col-3">
+				<button type="button" class="btn btn-danger text-center w-100 hours light">22</button>
+			</div>
+			<div class = "col-3">
+				<button type="button" class="btn btn-danger text-center w-100 hours light">23</button>
+			</div>		
+		</div>		
+	  </div>
+    </div>
+	
+	<div id="pump" class="container tab-pane fade"><br>
+	  <div class="row">
+	    <div class = "col-10">
+		
+			<div class= "row"><h3>PUMP</h5></div>
+			<div class= "row"><p>Configure here your pump hours</p></div>
+	    </div>
+		<div class = "col-2">
+		</div>
+	  </div>
+	  
+	  <div id="p-hours">
+
+		<div class = "row mb-2">
+			<div class = "col-3">
+				<button type="button" class="btn btn-danger text-center w-100 hours pump">00</button>
+			</div>
+			<div class = "col-3">
+				<button type="button" class="btn btn-danger text-center w-100 hours pump">01</button>
+			</div>
+			<div class = "col-3">
+				<button type="button" class="btn btn-danger text-center w-100 hours pump">02</button>
+			</div>
+			<div class = "col-3">
+				<button type="button" class="btn btn-danger text-center w-100 hours pump">03</button>
+			</div>		
+		</div>
+		<div class = "row mb-2">
+			<div class = "col-3">
+				<button type="button" class="btn btn-danger text-center w-100 hours pump">04</button>
+			</div>
+			<div class = "col-3">
+				<button type="button" class="btn btn-danger text-center w-100 hours pump">05</button>
+			</div>
+			<div class = "col-3">
+				<button type="button" class="btn btn-danger text-center w-100 hours pump">06</button>
+			</div>
+			<div class = "col-3">
+				<button type="button" class="btn btn-danger text-center w-100 hours pump">07</button>
+			</div>		
+		</div>
+		<div class = "row mb-2">
+			<div class = "col-3">
+				<button type="button" class="btn btn-danger text-center w-100 hours pump">08</button>
+			</div>
+			<div class = "col-3">
+				<button type="button" class="btn btn-danger text-center w-100 hours pump">09</button>
+			</div>
+			<div class = "col-3">
+				<button type="button" class="btn btn-danger text-center w-100 hours pump">10</button>
+			</div>
+			<div class = "col-3">
+				<button type="button" class="btn btn-danger text-center w-100 hours pump">11</button>
+			</div>		
+		</div>
+		<div class = "row mb-2">
+			<div class = "col-3">
+				<button type="button" class="btn btn-danger text-center w-100 hours pump">12</button>
+			</div>
+			<div class = "col-3">
+				<button type="button" class="btn btn-danger text-center w-100 hours pump">13</button>
+			</div>
+			<div class = "col-3">
+				<button type="button" class="btn btn-danger text-center w-100 hours pump">14</button>
+			</div>
+			<div class = "col-3">
+				<button type="button" class="btn btn-danger text-center w-100 hours pump">15</button>
+			</div>		
+		</div>
+		<div class = "row mb-2">
+			<div class = "col-3">
+				<button type="button" class="btn btn-danger text-center w-100 hours pump">16</button>
+			</div>
+			<div class = "col-3">
+				<button type="button" class="btn btn-danger text-center w-100 hours pump">17</button>
+			</div>
+			<div class = "col-3">
+				<button type="button" class="btn btn-danger text-center w-100 hours pump">18</button>
+			</div>
+			<div class = "col-3">
+				<button type="button" class="btn btn-danger text-center w-100 hours pump">19</button>
+			</div>		
+		</div>
+		<div class = "row mb-2">
+			<div class = "col-3">
+				<button type="button" class="btn btn-danger text-center w-100 hours pump">20</button>
+			</div>
+			<div class = "col-3">
+				<button type="button" class="btn btn-danger text-center w-100 hours pump">21</button>
+			</div>
+			<div class = "col-3">
+				<button type="button" class="btn btn-danger text-center w-100 hours pump">22</button>
+			</div>
+			<div class = "col-3">
+				<button type="button" class="btn btn-danger text-center w-100 hours pump">23</button>
+			</div>		
+		</div>
+	  </div>
+	</div>
+	
+	
+	<div id="fan" class="container tab-pane fade"><br>
+	  <div class="row">
+	    <div class = "col-10">
+		
+			<div class= "row"><h3>FAN</h5></div>
+			<div class= "row"><p>Configure here your fan hours</p></div>
+	    </div>
+		<div class = "col-2">
+		</div>
+	  </div>
+	  
+	  <div id="f-hours">
+
+		<div class = "row mb-2">
+			<div class = "col-3">
+				<button type="button" class="btn btn-danger text-center w-100 hours fan">00</button>
+			</div>
+			<div class = "col-3">
+				<button type="button" class="btn btn-danger text-center w-100 hours fan">01</button>
+			</div>
+			<div class = "col-3">
+				<button type="button" class="btn btn-danger text-center w-100 hours fan">02</button>
+			</div>
+			<div class = "col-3">
+				<button type="button" class="btn btn-danger text-center w-100 hours fan">03</button>
+			</div>		
+		</div>
+		<div class = "row mb-2">
+			<div class = "col-3">
+				<button type="button" class="btn btn-danger text-center w-100 hours fan">04</button>
+			</div>
+			<div class = "col-3">
+				<button type="button" class="btn btn-danger text-center w-100 hours fan">05</button>
+			</div>
+			<div class = "col-3">
+				<button type="button" class="btn btn-danger text-center w-100 hours fan">06</button>
+			</div>
+			<div class = "col-3">
+				<button type="button" class="btn btn-danger text-center w-100 hours fan">07</button>
+			</div>		
+		</div>
+		<div class = "row mb-2">
+			<div class = "col-3">
+				<button type="button" class="btn btn-danger text-center w-100 hours fan">08</button>
+			</div>
+			<div class = "col-3">
+				<button type="button" class="btn btn-danger text-center w-100 hours fan">09</button>
+			</div>
+			<div class = "col-3">
+				<button type="button" class="btn btn-danger text-center w-100 hours fan">10</button>
+			</div>
+			<div class = "col-3">
+				<button type="button" class="btn btn-danger text-center w-100 hours fan">11</button>
+			</div>		
+		</div>
+		<div class = "row mb-2">
+			<div class = "col-3">
+				<button type="button" class="btn btn-danger text-center w-100 hours fan">12</button>
+			</div>
+			<div class = "col-3">
+				<button type="button" class="btn btn-danger text-center w-100 hours fan">13</button>
+			</div>
+			<div class = "col-3">
+				<button type="button" class="btn btn-danger text-center w-100 hours fan">14</button>
+			</div>
+			<div class = "col-3">
+				<button type="button" class="btn btn-danger text-center w-100 hours fan">15</button>
+			</div>		
+		</div>
+		<div class = "row mb-2">
+			<div class = "col-3">
+				<button type="button" class="btn btn-danger text-center w-100 hours fan">16</button>
+			</div>
+			<div class = "col-3">
+				<button type="button" class="btn btn-danger text-center w-100 hours fan">17</button>
+			</div>
+			<div class = "col-3">
+				<button type="button" class="btn btn-danger text-center w-100 hours fan">18</button>
+			</div>
+			<div class = "col-3">
+				<button type="button" class="btn btn-danger text-center w-100 hours fan">19</button>
+			</div>		
+		</div>
+		<div class = "row mb-2">
+			<div class = "col-3">
+				<button type="button" class="btn btn-danger text-center w-100 hours fan">20</button>
+			</div>
+			<div class = "col-3">
+				<button type="button" class="btn btn-danger text-center w-100 hours fan">21</button>
+			</div>
+			<div class = "col-3">
+				<button type="button" class="btn btn-danger text-center w-100 hours fan">22</button>
+			</div>
+			<div class = "col-3">
+				<button type="button" class="btn btn-danger text-center w-100 hours fan">23</button>
+			</div>		
+		</div>
+	  </div>
+	</div>
+	
+	
+    <div id="info" class="container tab-pane fade"><br>
+      <h3>INFO</h3>
+      <p>Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam.</p>
+    </div>	
+	
+  </div>
+ </div>
+</div>
+<script src="script/boot.js"></script>
+<script src="script/blescript.js"></script>
+<script>
+	const botoes = document.querySelectorAll('button.hours');
+	for (var i = 0; i < botoes.length; i++) {
+		botoes[i].addEventListener('click', onHourButtonClick, false);
+	}
+	 document.querySelector('button.sendButton').addEventListener('click', onSendButtonClick, false);
+	
+	
+ </script>  
+</body>
+</html>
