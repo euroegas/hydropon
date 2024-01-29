@@ -32,7 +32,7 @@ The pico microproccessor is controled from a web page (boot.html) over a bluetoo
 
 - copy all files (python files) of the folder "pico" to the Raspberry Pi Pico W
 
-- copy the files in the main folder to your local device, or to a web server.
+- copy the files in the main folder, as well as script and img folders to your local device, or to a web server.
 
 Execution
 
